@@ -1,0 +1,14 @@
+customer:
+  id:
+    valid: 42
+    invalid: abc123
+    missing: ""
+  name:
+    valid: John Doe
+    invalid: Abc123&!%^"!
+    too_short: A B
+    missing: ""
+  email:
+    valid: johndoe@bonhams.com
+    invalid: jeff@care
+    missing: ""
