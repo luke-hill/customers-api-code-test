@@ -3,8 +3,9 @@ Given("the {word} is {word}") do |parameter, issue|
 end
 
 When("I submit the request") do
-  @response = @request.perform
-  @response_code = @request.response_code
+  _response = Curl.post(@request.url, @request.body)
+  @response = JSON.parse(_response.body)
+  @response_code = _response.response_code
 end
 
 Then("I get a {int} response") do |code|

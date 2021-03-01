@@ -5,7 +5,7 @@ Feature: Creating a Customer on ABC system
   Scenario: Create a customer using valid information
     Given I have a valid request to create a customer
     When I submit the request
-    Then I get a 200 response
+    Then I get a 201 response
     And the customer is created
 
   Scenario Outline: Create a customer using invalid information
