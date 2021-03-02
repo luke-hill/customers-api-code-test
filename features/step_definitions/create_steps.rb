@@ -1,14 +1,17 @@
 Given("I have a valid request to create a customer") do
-  @request = Endpoint::Customers::Create.new
+  Endpoint::Customers::Create.new.tap do |endpoint|
+    @post_url = endpoint.url
+    @post_body = endpoint.body
+  end
 end
 
 Then("the customer is created") do
-  expect(@response.first)
+  expect(@response)
     .to eq(
       {
-        "id": @request.body["id"],
-        "name": @request.body["name"],
-        "email": @request.body["email"]
+        "id" => @post_body["id"].to_s,
+        "name" => @post_body["name"],
+        "email" => @post_body["email"]
       }
     )
 end

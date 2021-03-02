@@ -10,9 +10,9 @@ Feature: Creating a Customer on ABC system
 
   Scenario Outline: Create a customer using invalid information
     Given I have a valid request to create a customer
-    But the <parameter> is <issue>
+    But the "<parameter>" is "<issue>"
+    When I submit the request
     Then I get a 400 response
-#    And the customer is not created
 
     Examples:
       | parameter | issue     |

@@ -7,9 +7,9 @@ module Endpoint
 
       def body
         {
-          "id": rand(100_000_000),
-          "name": "John doe",
-          "email": "johndoe@bonhams.com"
+          "id" => rand(100_000_000),
+          "name" => "John doe",
+          "email" => "johndoe@bonhams.com"
         }
       end
     end
